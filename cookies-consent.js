@@ -1,6 +1,62 @@
 
 window.dataLayer = window.dataLayer || [];
 
+var DENIED = 'denied';
+var GRANTED = 'granted';
+
+function dataLayerPush() {
+  dataLayer.push(arguments);
+}
+
+// Send default consent with actual consent options.
+window.addEventListener('consent-ready', function () {
+  dataLayerPush('consent', 'default', {
+    'ad_storage': window.CookieConsent.marketing ? GRANTED : DENIED,
+    'analytics_storage': window.CookieConsent.statistics ? GRANTED : DENIED,
+    'personalization_storage': window.CookieConsent.preferences ? GRANTED : DENIED,
+    'functionality_storage': GRANTED,
+    'security_storage': GRANTED,
+  });
+});
+
+// Send updated consent with actual consent options.
+window.addEventListener('consent-updated', function () {
+  // GTM consent
+  dataLayerPush('consent', 'update', {
+    'ad_storage': window.CookieConsent.marketing ? GRANTED : DENIED,
+    'analytics_storage': window.CookieConsent.statistics ? GRANTED : DENIED,
+    'personalization_storage': window.CookieConsent.preferences ? GRANTED : DENIED,
+    'functionality_storage': GRANTED,
+    'security_storage': GRANTED,
+  });
+
+  // Custom consent from document
+  dataLayer.push({
+    'event': 'cookie_consent_update',
+    'type': window.CookieConsent.type,
+    'personalization': window.CookieConsent.preferences ? GRANTED : DENIED,
+    'ad': window.CookieConsent.marketing ? GRANTED : DENIED,
+    'analytics': window.CookieConsent.statistics ? GRANTED : DENIED,
+  });
+});
+
+// Send event to dataLayer on consent window open
+window.addEventListener('consent-show', function () {
+  dataLayer.push({
+    'event': 'cookie_consent_bar_show'
+  });
+});
+
+// Send event to dataLayer on consent window close.
+window.addEventListener('consent-hide', function () {
+  dataLayer.push({
+    'event': 'cookie_consent_bar_hide'
+  });
+});
+
+
+
+
 window.CookieConsentTheme = {
   'base-color': '#3c3c3c',
   'border-radius': '0',
