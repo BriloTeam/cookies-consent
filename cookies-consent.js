@@ -30,6 +30,16 @@ window.addEventListener('consent-updated', function () {
     'security_storage': GRANTED,
   });
 
+  // Custom consent from document
+  dataLayer.push({
+    'event': 'cookie_consent_update',
+    'type': window.CookieConsent.type,
+    'personalization_storage': window.CookieConsent.preferences ? GRANTED : DENIED,
+    'ad_storage': window.CookieConsent.marketing ? GRANTED : DENIED,
+    'analytics_storage': window.CookieConsent.statistics ? GRANTED : DENIED,
+  });
+
+
 });
 
 // Send event to dataLayer on consent window open
