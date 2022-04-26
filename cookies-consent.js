@@ -39,7 +39,6 @@ window.addEventListener('consent-updated', function () {
     'analytics_storage': window.CookieConsent.statistics ? GRANTED : DENIED,
   });
 
-
 });
 
 // Send event to dataLayer on consent window open
