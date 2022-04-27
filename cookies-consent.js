@@ -78,6 +78,13 @@ window.CookieConsentTheme = {
   'button-primary--hover__color': '#000',
 };
 
+document.querySelectorAll('.js-consent-open').forEach((element) => {
+  element.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.CookieConsentModalOpen();
+  });
+});
+
 (function cookiesInit() {
   var scriptEl = document.createElement('script');
   scriptEl.src = 'https://cdn.jsdelivr.net/gh/danielsitek/dgp-cookie-consent@1.4.0/dist/cookies.min.js';
