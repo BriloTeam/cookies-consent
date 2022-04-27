@@ -81,7 +81,9 @@ window.CookieConsentTheme = {
 document.querySelectorAll('.js-consent-open').forEach(function (element) {
   element.addEventListener('click', function (event) {
     event.preventDefault();
-    window.CookieConsentModalOpen();
+    if (!document.querySelectorAll("consent-dialog").length) {
+      window.CookieConsentModalOpen();
+    }
   });
 });
 
