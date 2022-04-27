@@ -78,8 +78,8 @@ window.CookieConsentTheme = {
   'button-primary--hover__color': '#000',
 };
 
-document.querySelectorAll('.js-consent-open').forEach((element) => {
-  element.addEventListener('click', (event) => {
+document.querySelectorAll('.js-consent-open').forEach(function (element) {
+  element.addEventListener('click', function (event) {
     event.preventDefault();
     window.CookieConsentModalOpen();
   });
