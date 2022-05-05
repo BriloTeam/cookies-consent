@@ -17,6 +17,11 @@ window.addEventListener('consent-ready', function () {
     'functionality_storage': GRANTED,
     'security_storage': GRANTED,
   });
+
+  dataLayer.push({
+    'event': 'cookie_consent_ready'
+  });
+
 });
 
 // Send updated consent with actual consent options.
