@@ -98,7 +98,7 @@
   });
 
   // Theme
-  w.CookieConsentTheme = {
+  w.CookieConsentTheme = w.CookieConsentTheme || {
     'base-color': '#3c3c3c',
     'border-radius': '0',
 
