@@ -98,7 +98,7 @@
   });
 
   // Theme
-  w.CookieConsentTheme = w.CookieConsentTheme || {
+  w.CookieConsentTheme = {
     'base-color': '#3c3c3c',
     'border-radius': '0',
 
@@ -118,10 +118,14 @@
 
     'button-primary--hover__bg-color': '#f3f3f2',
     'button-primary--hover__color': '#000',
+    ...w.CookieConsentTheme,
   };
 
   // Translation
-  w.CookieConsentTranslations = {};
+  w.CookieConsentTranslations = w.CookieConsentTranslations || {};
+
+  // Settings
+  w.CookieConsentSettings = w.CookieConsentSettings || {};
 
   // COOKIE CONSENT PANEL INITIALIZATION
   // ===
