@@ -135,4 +135,14 @@
   scriptEl.id = 'cookie-consent';
 
   d.body.appendChild(scriptEl);
+
+  document.querySelectorAll('.js-consent-open').forEach(function (element) {
+    element.addEventListener('click', function (event) {
+      event.preventDefault();
+      if (!document.querySelectorAll("nrb-consent-dialog").length) {
+        window.CookieConsentModalOpen();
+      }
+    });
+  });
+
 })(window, document);
