@@ -139,7 +139,7 @@
   document.querySelectorAll('.js-consent-open').forEach(function (element) {
     element.addEventListener('click', function (event) {
       event.preventDefault();
-      if (!document.querySelectorAll("nrb-consent-dialog").length) {
+      if (!document.querySelectorAll("consent-dialog").length) {
         window.CookieConsentModalOpen();
       }
     });
