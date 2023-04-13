@@ -121,6 +121,9 @@
     ...w.CookieConsentTheme,
   };
 
+  // Dark Mode Theme
+  w.CookieConsentThemeDark = w.CookieConsentThemeDark || {};
+
   // Translation
   w.CookieConsentTranslations = w.CookieConsentTranslations || {};
 
@@ -130,7 +133,7 @@
   // COOKIE CONSENT PANEL INITIALIZATION
   // ===
   var scriptEl = d.createElement('script');
-  scriptEl.src = 'https://cdn.jsdelivr.net/gh/danielsitek/dgp-cookie-consent@1.5.0/dist/cookies.min.js';
+  scriptEl.src = 'https://cdn.jsdelivr.net/gh/danielsitek/dgp-cookie-consent@1.5.1/dist/cookies.min.js';
   scriptEl.type = 'text/javascript';
   scriptEl.id = 'cookie-consent';
 
