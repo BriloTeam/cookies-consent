@@ -133,7 +133,7 @@
   // COOKIE CONSENT PANEL INITIALIZATION
   // ===
   var scriptEl = d.createElement('script');
-  scriptEl.src = 'https://cdn.jsdelivr.net/gh/danielsitek/dgp-cookie-consent@1.5.1/dist/cookies.min.js';
+  scriptEl.src = 'https://cdn.jsdelivr.net/gh/danielsitek/dgp-cookie-consent@1.5.2/dist/cookies.min.js';
   scriptEl.type = 'text/javascript';
   scriptEl.id = 'cookie-consent';
 
