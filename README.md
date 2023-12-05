@@ -16,6 +16,7 @@
         'color-primary': 'pink',
         'button-primary__bg-color': 'pink',
         'button-primary--hover__bg-color': 'violet',
+        'badge__color': 'pink',
     };
 </script>
 <script src="https://cdn.jsdelivr.net/gh/BriloTeam/cookies-consent@latest/cookies-consent.js" type="text/javascript" defer></script>

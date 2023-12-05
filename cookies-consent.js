@@ -118,6 +118,8 @@
 
     'button-primary--hover__bg-color': '#f3f3f2',
     'button-primary--hover__color': '#000',
+
+    'badge__color': '#000000',
     ...w.CookieConsentTheme,
   };
 
@@ -133,7 +135,7 @@
   // COOKIE CONSENT PANEL INITIALIZATION
   // ===
   var scriptEl = d.createElement('script');
-  scriptEl.src = 'https://cdn.jsdelivr.net/gh/danielsitek/dgp-cookie-consent@1.5.2/dist/cookies.min.js';
+  scriptEl.src = 'https://cdn.jsdelivr.net/gh/danielsitek/dgp-cookie-consent@1.6.0/dist/cookies.min.js';
   scriptEl.type = 'text/javascript';
   scriptEl.id = 'cookie-consent';
 
