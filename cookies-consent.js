@@ -97,6 +97,30 @@
     });
   });
 
+  w.addEventListener('consent-close', () => {
+    w.dataLayer.push({
+      'event': 'cookie_consent_bar_close'
+    });
+  });
+
+  w.addEventListener('consent-badge-show', () => {
+    w.dataLayer.push({
+      'event': 'cookie_consent_badge_show'
+    });
+  });
+
+  w.addEventListener('consent-badge-hide', () => {
+    w.dataLayer.push({
+      'event': 'cookie_consent_badge_hide'
+    });
+  });
+
+  w.addEventListener('consent-badge-click', () => {
+    w.dataLayer.push({
+      'event': 'cookie_consent_badge_click'
+    });
+  });
+
   // Theme
   w.CookieConsentTheme = {
     'base-color': '#3c3c3c',
@@ -120,6 +144,12 @@
     'button-primary--hover__color': '#000',
 
     'badge__color': '#000000',
+
+    'base-link__color': '#000000',
+    'base-link__text-decoration': 'underline',
+    'base-link--hover__color': '#3c3c3c',
+    'base-link--hover__text-decoration': 'underline',
+
     ...w.CookieConsentTheme,
   };
 
@@ -135,7 +165,7 @@
   // COOKIE CONSENT PANEL INITIALIZATION
   // ===
   var scriptEl = d.createElement('script');
-  scriptEl.src = 'https://cdn.jsdelivr.net/gh/danielsitek/dgp-cookie-consent@1.6.0/dist/cookies.min.js';
+  scriptEl.src = 'https://cdn.jsdelivr.net/gh/danielsitek/dgp-cookie-consent@1.6.1/dist/cookies.min.js';
   scriptEl.type = 'text/javascript';
   scriptEl.id = 'cookie-consent';
 
