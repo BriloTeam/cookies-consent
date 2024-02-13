@@ -41,6 +41,8 @@
 
   dataLayerPush('consent', 'default', {
     'ad_storage': defaultConsent.marketing ? GRANTED : DENIED,
+    'ad_user_data': defaultConsent.marketing ? GRANTED : DENIED,
+    'ad_personalization': defaultConsent.marketing ? GRANTED : DENIED,
     'analytics_storage': defaultConsent.statistics ? GRANTED : DENIED,
     'personalization_storage': defaultConsent.preferences ? GRANTED : DENIED,
     'functionality_storage': GRANTED,
@@ -66,6 +68,8 @@
     // GTM consent
     dataLayerPush('consent', 'update', {
       'ad_storage': w.CookieConsent.marketing ? GRANTED : DENIED,
+      'ad_user_data': w.CookieConsent.marketing ? GRANTED : DENIED,
+      'ad_personalization': w.CookieConsent.marketing ? GRANTED : DENIED,
       'analytics_storage': w.CookieConsent.statistics ? GRANTED : DENIED,
       'personalization_storage': w.CookieConsent.preferences ? GRANTED : DENIED,
       'functionality_storage': GRANTED,
@@ -78,6 +82,8 @@
       'type': w.CookieConsent.type,
       'personalization_storage': w.CookieConsent.preferences ? GRANTED : DENIED,
       'ad_storage': w.CookieConsent.marketing ? GRANTED : DENIED,
+      'ad_user_data': w.CookieConsent.marketing ? GRANTED : DENIED,
+      'ad_personalization': w.CookieConsent.marketing ? GRANTED : DENIED,
       'analytics_storage': w.CookieConsent.statistics ? GRANTED : DENIED,
     });
 
@@ -165,7 +171,7 @@
   // COOKIE CONSENT PANEL INITIALIZATION
   // ===
   var scriptEl = d.createElement('script');
-  scriptEl.src = 'https://cdn.jsdelivr.net/gh/danielsitek/dgp-cookie-consent@1.6.1/dist/cookies.min.js';
+  scriptEl.src = 'https://cdn.jsdelivr.net/gh/danielsitek/dgp-cookie-consent@1.6.2/dist/cookies.min.js';
   scriptEl.type = 'text/javascript';
   scriptEl.id = 'cookie-consent';
 
