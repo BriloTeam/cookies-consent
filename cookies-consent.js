@@ -166,7 +166,10 @@
   w.CookieConsentTranslations = w.CookieConsentTranslations || {};
 
   // Settings
-  w.CookieConsentSettings = w.CookieConsentSettings || {};
+  w.CookieConsentSettings = {
+    ...w.CookieConsentSettings,
+    disableCross: true,
+  };
 
   // COOKIE CONSENT PANEL INITIALIZATION
   // ===
